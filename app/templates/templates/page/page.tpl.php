@@ -36,7 +36,7 @@
             </div>
           <?php endif; // end highlighted ?>
 
-          <?php if (!$is_front && strlen($title) > 0): ?>
+          <?php if ($show_title && !$is_front && strlen($title) > 0): ?>
             <h1 <?php if (!empty($title_attributes)) print $title_attributes ?>>
               <?php print $title; ?>
             </h1>
@@ -49,7 +49,6 @@
           <?php endif; // end help ?>
 
           <?php print render($page['content']); ?>
-
         </div>
 
         <?php if ($page['sidebar_first']): ?>
@@ -72,9 +71,7 @@
           </div>
         </div>
       <?php endif; // end Below Content ?>
-
     </div>
 
   <?php include('page-footer.inc'); ?>
-
 </div>
