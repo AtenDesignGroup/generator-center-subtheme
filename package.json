@@ -1,0 +1,35 @@
+{
+  "name": "generator-drupal-prototype",
+  "version": "0.0.0",
+  "description": "Yeoman generator for Prototype drupal theme",
+  "license": "MIT",
+  "main": "app/index.js",
+  "repository": "pixelwhip/generator-drupal-prototype",
+  "author": {
+    "name": "John Ferris",
+    "url": "https://github.com/pixelwhip"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "files": [
+    "app"
+  ],
+  "keywords": [
+    "yeoman-generator",
+    "drupal",
+    "theme"
+  ],
+  "dependencies": {
+    "yeoman-generator": "^0.18.9",
+    "chalk": "^1.0.0",
+    "yosay": "^1.0.2"
+  },
+  "devDependencies": {
+    "lodash": "^3.5.0",
+    "mocha": "*"
+  }
+}

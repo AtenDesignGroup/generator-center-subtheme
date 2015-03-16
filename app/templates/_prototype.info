@@ -1,0 +1,30 @@
+name = <%= name %>
+description = <%= description %>
+core = 7.x
+base theme = center
+
+;Regions
+regions[page_top]           = Page Top
+regions[page_bottom]        = Page Bottom
+
+regions[utility]            = Utility
+regions[header]             = Header
+regions[navigation]         = Navigation
+
+regions[help]               = Help
+regions[highlighted]        = Highlighted
+
+regions[above_content]      = Above Content
+regions[content]            = Content
+regions[sidebar_first]      = Sidebar First
+regions[sidebar_second]     = Sidebar Second
+regions[below_content]      = Below Content
+
+regions[footer]             = Footer
+regions[admin_footer]       = Admin Footer
+
+;CSS
+stylesheets[all][] = build/css/screen.css
+
+;JS
+;scripts[] = build/js/main.js

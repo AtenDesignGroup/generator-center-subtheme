@@ -1,0 +1,9 @@
+sudo: false
+language: node_js
+node_js:
+  - 'iojs'
+  - '0.12'
+  - '0.10'
+before_install:
+  - currentfolder=${PWD##*/}
+  - if [ "$currentfolder" != 'generator-drupal-prototype' ]; then cd .. && eval "mv $currentfolder generator-drupal-prototype" && cd generator-drupal-prototype; fi

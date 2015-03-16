@@ -1,0 +1,164 @@
+//
+// @file
+// Default tag styles.
+//
+// The only class selectors allowed in this file are those intended
+// for use within the WYSIWYG editor.
+// ----------------------------------------------------------------------------
+
+
+// Establish Vertical rhythm.
+* html {
+  font-size: 100% * $base-font-size / $browser-default-font-size;
+}
+
+html {
+  font-size: $base-font-size;
+  // Override the default line height to allow for smaller baseline increments.
+  @include adjust-leading-to(4);
+}
+
+body {
+  color: $clr-text;
+}
+
+// Use border-box by default on elements typically used for layout.
+div,
+section,
+header,
+footer,
+aside,
+figure {
+  box-sizing: border-box;;
+}
+
+
+//
+// Headings
+//
+h1 {
+  @include adjust-font-size-to($fs-h1);
+  @include rhythm(2, 0, 0, 2, $fs-h1);
+  font-family: $ff-heading;
+}
+
+h2 {
+  @include adjust-font-size-to($fs-h2);
+  @include rhythm(2, 0, 0, 2, $fs-h2);
+  font-family: $ff-heading;
+}
+
+h3 {
+  @include adjust-font-size-to($fs-h3);
+  @include rhythm(2, 0, 0, 2, $fs-h3);
+  font-family: $ff-heading;
+}
+
+h4 {
+  @include adjust-font-size-to($fs-h4);
+  @include rhythm(4, 0, 0, 0, $fs-h4);
+  font-family: $ff-heading;
+}
+
+h5 {
+  @include adjust-font-size-to($fs-h5);
+  @include rhythm(4, 0, 0, 0, $fs-h5);
+  font-family: $ff-heading;
+}
+
+h6 {
+  @include adjust-font-size-to($fs-h6);
+  @include rhythm(4, 0, 0, 0, $fs-h6);
+  letter-spacing: .03em;
+  text-transform: uppercase;
+}
+
+
+//
+// Links
+//
+a {
+  @include link-colors($clr-link, darken($clr-link, 10%));
+}
+
+
+//
+// Copy
+//
+p {
+  margin: 0 0 rhythm(2);
+}
+
+blockquote {
+  margin: rhythm(2) 0 rhythm(2) $indent-amount;
+  font-style: italic;
+}
+
+
+//
+// Images
+//
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+//
+// Definition Lists
+//
+dl {
+  margin-bottom: rhythm(3);
+}
+
+dt {
+  font-weight: bold;
+}
+
+dd {
+  margin-left: $w-gutter;
+}
+
+//
+// Tables
+//
+table {
+  max-width: 100%;
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin-bottom: rhythm(2);
+}
+
+thead {
+  text-align: left;
+
+  th {
+    vertical-align: bottom;
+  }
+}
+
+th,
+td {
+  padding: 8px;
+  vertical-align: top;
+  border-top: 1px solid $clr-table-border;
+}
+
+// Remove top border from thead by default
+caption + thead tr:first-child th,
+caption + thead tr:first-child td,
+colgroup + thead tr:first-child th,
+colgroup + thead tr:first-child td,
+thead:first-child tr:first-child th,
+thead:first-child tr:first-child td {
+  border-top: 0;
+}
+
+// Account for multiple tbody instances
+tbody + tbody {
+  border-top: 2px solid $clr-table-border;
+}
+
+tr.odd  { background-color: $clr-table-odd; }
+tr.even { background-color: $clr-table-even; }

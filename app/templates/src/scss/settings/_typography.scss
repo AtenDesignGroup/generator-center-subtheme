@@ -1,0 +1,60 @@
+//
+// @file
+// Breakpoint variables.
+//
+
+// Typefaces.
+//----------------------------------------------------------------------------
+$ff-mono:  monospace;
+$ff-sans:  sans-serif;
+$ff-serif: serif;
+
+// Semantic fonts.
+//----------------------------------------------------------------------------
+$ff-body:    $ff-serif;
+$ff-heading: $ff-sans;
+$ff-display: $ff-heading;
+
+// Font size.
+//----------------------------------------------------------------------------
+$fs-2xs:     12px;
+$fs-xs:      13px;
+$fs-s:       14px;
+$fs-m:       16px;
+$fs-l:       21px;
+$fs-xl:      24px;
+$fs-2xl:     28px;
+$fs-3xl:     32px;
+$fs-4xl:     35px;
+$fs-5xl:     40px;
+
+// Semantic font size.
+//----------------------------------------------------------------------------
+$fs-h1: $fs-3xl !default;
+$fs-h2: $fs-2xl !default;
+$fs-h3: $fs-xl !default;
+$fs-h4: $fs-m !default;
+$fs-h5: $fs-s !default;
+$fs-h6: $fs-2xs !default;
+
+// Font Weights
+//----------------------------------------------------------------------------
+$fw-thin: 100;
+$fw-light: 300;
+$fw-regular: 400;
+$fw-book: 400;
+$fw-medium: 500;
+$fw-semibold: 600;
+$fw-bold: 700;
+
+// Indentation.
+//----------------------------------------------------------------------------
+$indent-amount: 3em !default;
+
+// Vertical rhythm.
+//----------------------------------------------------------------------------
+$base-font-size:    $fs-m;       // Font-size of your body copy.
+$base-line-height:  6px;         // Setting the base-line-height half.
+                                 // the height of the desired body copy.
+                                 // line-height helps prevent sparse.
+                                 // leading at different font-sizes.

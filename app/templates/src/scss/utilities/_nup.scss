@@ -1,0 +1,71 @@
+//
+// @file
+// Mixins for creating simple grids of elements.
+// ----------------------------------------------------------------------------
+$nup-gutter: 2em !default;
+$nup-columns: 2 !default;
+// Method for handling gutters on edge items.
+//  Options:
+//    'nth'    : Uses nth child to remove outer padding of the first and last
+//               elements in a row.
+//    'expand' : Uses negative left and right margin on the container to add
+//               room for outer padding.
+//    'none'   : Nothing. Grid items will appear inset from their container.
+$nup-gutter-method: 'expand' !default;
+$nup-border-box: false !default;
+$nup-clearfix: true !default;
+
+// Handles overflow on an outer wrapper when dealing with 'expand' mode.
+@mixin nup-container-wrapper($gutter-method: $nup-gutter-method) {
+  @if $gutter-method == 'expand' {
+    overflow-x: hidden;
+  }
+}
+
+// Applied to the item container.  Often times this is a <ul> or <ol>.
+@mixin nup-container($gutter: $nup-gutter, $gutter-method: $nup-gutter-method, $clearfix: $nup-clearfix) {
+  @if $clearfix {
+    // Clearfix the container if desired.
+    @include clearfix;
+  }
+  @if $gutter-method == 'expand' {
+    // Expand edges of the container beyond its parent element,
+    //  to account for item padding.
+    margin-left: -.5 * ($gutter);
+    margin-right: -.5 * ($gutter);
+  }
+}
+
+// Applied to the items.  Often <li>.
+@mixin nup-base($gutter: $nup-gutter, $columns: $nup-columns, $gutter-method: $nup-gutter-method, $border-box: $nup-border-box) {
+  float: left;
+  @if $border-box {
+    // Border box is required for nup to work properly, but we make it optional
+    //   as it may be included more globally.
+    box-sizing: border-box;
+  }
+  @if unit($gutter) == "%" and $gutter-method == 'expand' {
+    // Do the math based on the expanded container.
+    padding: 0 (100 / (100 + ($gutter)) * $gutter ) * .5%;
+  } @else {
+    padding: 0 ($gutter / 2);
+  }
+
+  @if $gutter-method == 'nth' {
+    &:nth-child(#{$columns}n+1) {
+      clear: left;
+      padding-left: 0;
+    }
+    &:nth-child(#{$columns}n+#{$columns}) {
+      padding-right: 0;
+    }
+  }
+}
+
+// Applied to the items.  Often <li>. This is broken out so column widths can be
+//  easily adjusted at different breakpoints without having to duplicate the
+//  gutter settings.
+@mixin nup-item($columns: $nup-columns) {
+  // Set the width of the item.
+  width: 100% / $columns;
+}

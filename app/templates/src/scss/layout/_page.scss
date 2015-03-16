@@ -1,0 +1,17 @@
+//
+// @file
+// Page layout styles.
+//
+// This file should contain the global layout styles for how regions
+// relate to one another on a given page.
+// ----------------------------------------------------------------------------
+
+// Set the page width.
+.l--constrained {
+  padding: 0 $w-gutter-half;
+
+  @include breakpoint($desktop) {
+    width: $w-full;
+    margin: 0 auto;
+  }
+}

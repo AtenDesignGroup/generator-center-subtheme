@@ -1,0 +1,39 @@
+//
+// @file
+// Color variables.
+//
+
+//  Color
+//-----------------------------------------------------------------------------
+$white:             #ffffff;
+$black:             #000000;
+
+$gray-white:        #f0f0f0;
+$gray-lightest:     #dbdbdb;
+$gray-lighter:      #c7c7c7;
+$gray-light:        #b3b3b3;
+$gray:              #999;
+$gray-dark:         #666;
+$gray-darker:       #333;
+$gray-darkest:      #292929;
+$gray-black:        #141414;
+
+$red:               #b52828;
+
+$green:             #9cc524;
+
+$blue:              #4168b6;
+
+// Semantic color.
+//----------------------------------------------------------------------------
+$clr-neutral:      $gray-light;      // Default nuetral color
+$clr-text:         $gray-darker;     // Default body copy color
+$clr-link:         $blue;            // Default link color
+$clr-accent:       $green;           // Default accent color
+$clr-border:       $gray-lighter;    // Default border and required color
+$clr-status:       $green;      // Default status color
+$clr-warning:      $blue;            // Default warning color
+$clr-error:        $red;             // Default error and required color
+$clr-table-border: $gray-light;      // Default table border color
+$clr-table-odd:    $gray-white;      // Default table odd row color
+$clr-table-even:   $white;           // Default table even row color
