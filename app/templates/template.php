@@ -4,8 +4,10 @@
  * Template stuff.
  */
 
-include 'inc/block.inc';
-include 'inc/field.inc';
-include 'inc/form.inc';
-include 'inc/menu.inc';
-include 'inc/node.inc';
+/**
+ * Scan and include all files in the /inc directory ending in .inc.
+ */
+$files = file_scan_directory(__DIR__ . '/inc', '/.inc/');
+foreach ($files as $filepath => $file) {
+  include $filepath;
+}
