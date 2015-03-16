@@ -8,7 +8,7 @@
 /**
  * Implements hook_preprocess_field().
  */
-function <% id %>_preprocess_field(&$vars) {
+function <%= id %>_preprocess_field(&$vars) {
 
   // Set shortcut variables. Hooray for less typing!
   $name = $vars['element']['#field_name'];

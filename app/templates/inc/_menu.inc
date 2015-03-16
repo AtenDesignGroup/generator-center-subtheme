@@ -7,7 +7,7 @@
 /**
  * Overrides theme_menu_tree().
  */
-function <% id %>_menu_tree__main_menu($variables) {
+function <%= id %>_menu_tree__main_menu($variables) {
   return '<ul class="nav nav--main">' . $variables['tree'] . '</ul>';
 }
 
