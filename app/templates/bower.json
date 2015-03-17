@@ -1,0 +1,19 @@
+{
+  "name": "hrw",
+  "version": "0.0.1",
+  "authors": [
+    "John Ferris <john@aten.io>"
+  ],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "src/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "susy": "~2.2.1",
+    "compass-breakpoint": "~2.5.0"
+  }
+}
