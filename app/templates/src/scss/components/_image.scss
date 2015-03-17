@@ -3,9 +3,9 @@
 // Image styles.
 // ----------------------------------------------------------------------------
 
+//
 // Borders
-// -------
-
+//
 .image-frame > img,
 .image-frame > a > img {
   box-sizing: border-box;
@@ -14,9 +14,10 @@
   background-color: $white;
 }
 
-// Floating
-// --------
 
+//
+// Floating
+//
 .image-left {
   float: left;
   margin: 0 $w-gutter rhythm(1) 0;

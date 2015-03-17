@@ -2,9 +2,11 @@
 // @file
 // Color variables.
 //
+@import "../utilities/blend-mode";
 
-//  Color
-//-----------------------------------------------------------------------------
+//
+// Colors
+//
 $white:             #ffffff;
 $black:             #000000;
 
@@ -14,7 +16,7 @@ $gray-lighter:      #c7c7c7;
 $gray-light:        #b3b3b3;
 $gray:              #999;
 $gray-dark:         #666;
-$gray-darker:       #333;
+$gray-darker:       #444;
 $gray-darkest:      #292929;
 $gray-black:        #141414;
 
@@ -24,8 +26,9 @@ $green:             #9cc524;
 
 $blue:              #4168b6;
 
-// Semantic color.
-//----------------------------------------------------------------------------
+//
+// Semantic colors
+//
 $clr-neutral:      $gray-light;      // Default nuetral color
 $clr-text:         $gray-darker;     // Default body copy color
 $clr-link:         $blue;            // Default link color

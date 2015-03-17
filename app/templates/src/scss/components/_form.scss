@@ -25,7 +25,9 @@ button {
 }
 
 
-// FIELDSETS
+//
+// Fieldsets
+//
 .fieldset-legend {
   font-family: $ff-sans;
   font-weight: bold;
@@ -38,8 +40,9 @@ button {
 }
 
 
-// AUTOCOMPLETE
-// Adjust the background position to account for the larger input size.
+//
+// Autocomplete
+//
 html.js input.form-autocomplete {
   background-position: 100% 6px;
 
@@ -49,7 +52,10 @@ html.js input.form-autocomplete {
 }
 
 
-// CHECKBOXES & RADIOS
+//
+// Checkboxes and Radios
+//
+
 // Since these are groups of related form-items, we reduce the spacing a bit.
 .form-type-checkboxes .form-type-checkbox,
 .form-type-radios .form-type-radio {
@@ -57,7 +63,9 @@ html.js input.form-autocomplete {
 }
 
 
-// ERRORS
+//
+// Errors
+//
 input.error,
 textarea.error,
 select.error {
@@ -65,7 +73,9 @@ select.error {
 }
 
 
-// MACHINE NAMES
+//
+// Machine Names
+//
 .machine-name-label {
   font-family: $ff-sans;
   font-weight: bold;
@@ -77,15 +87,18 @@ select.error {
 }
 
 
-// REQUIRED
+//
+// Required
+//
 .form-required,
 .marker {
   color: $clr-error;
   font-weight: bold;
 }
 
-
-// VERTICAL TABS
+//
+// Vertical Tabs
+//
 // These are based on the FAPI vertical tab markup which is different than the
 //  nav component.
 // @todo See if consolidating these is feasible.

@@ -4,12 +4,12 @@
 //
 // By default, table styles use the silent '%' syntax.
 // To use a class directly, change '%' to '.'
-// -----------------------------------------------------------------------------
+// ---------------------------------------------------------------------
 
 
-// BORDERED
-// --------
-
+//
+// Bordered
+//
 %table--bordered {
   border: 1px solid $clr-table-border;
   border-collapse: separate; // Done so we can round those corners!
@@ -36,9 +36,9 @@
 }
 
 
-// CONDENSED
-// ---------
-
+//
+// Condensed
+//
 %table--condensed {
   th,
   td {
@@ -46,11 +46,11 @@
   }
 }
 
-// STRIPED
-// -------
-// Default zebra-stripe styles (alternating gray and transparent backgrounds)
-
+//
+// Striped
+//
 %table--striped {
+  // Default zebra-stripe styles (alternating gray and transparent backgrounds)
   tbody {
     tr:nth-child(odd) td,
     tr:nth-child(odd) th {
@@ -60,9 +60,9 @@
 }
 
 
-// BORDERLESS
-// ----------
-
+//
+// Borderless
+//
 %table--borderless {
   th,
   td {

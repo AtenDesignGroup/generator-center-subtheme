@@ -3,9 +3,9 @@
 // Breakpoint variables.
 //
 
-$mobile: em(480px);
-$mobile-wide: em(600px);
-$tablet: em(768px);
-$tablet-wide: em(992px);
-$desktop: em(1080px);
-$desktop-wide: em(1382px);
+$mobile: em(480px, 16px);
+$mobile-wide: em(600px, 16px);
+$tablet: em(768px, 16px);
+$tablet-wide: em(992px, 16px);
+$desktop: em(1080px, 16px);
+$desktop-wide: em(1382px, 16px);
