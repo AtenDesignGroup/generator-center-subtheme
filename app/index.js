@@ -5,7 +5,7 @@ var yeoman = require('yeoman-generator');
 var yosay = require('yosay');
 var _  = require('lodash');
 
-var CtoolsLayoutGenerator = yeoman.generators.Base.extend({
+var DrupalPrototypeGenerator = yeoman.generators.Base.extend({
   promptUser: function () {
     var done = this.async();
 
@@ -86,4 +86,4 @@ var CtoolsLayoutGenerator = yeoman.generators.Base.extend({
   }
 });
 
-module.exports = CtoolsLayoutGenerator;
+module.exports = DrupalPrototypeGenerator;
