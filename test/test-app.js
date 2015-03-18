@@ -93,3 +93,21 @@ describe('drupal-prototype:bower', function () {
   });
 });
 
+describe('drupal-prototype:styleguide', function () {
+  before(function (done) {
+    helpers.run(path.join(__dirname, '../app'))
+      .inDir(path.join(os.tmpdir(), './temp-test'))
+      .withOptions({ 'skip-install': false })
+      .withPrompt(prompts)
+      .on('end', done);
+  });
+
+  it('Copies styleguide', function (done) {
+    assert.file([
+      'styleguide/index.php'
+    ]);
+
+    done();
+  });
+});
+

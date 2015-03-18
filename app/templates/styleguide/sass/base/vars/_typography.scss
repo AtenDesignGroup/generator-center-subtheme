@@ -1,0 +1,36 @@
+
+
+// Font size.
+//----------------------------------------------------------------------------
+$fs-xxs:     13px;
+$fs-xs:      14px;
+$fs-s:       16px;
+$fs-m:       18px;
+$fs-l:       21px;
+$fs-xl:      24px;
+$fs-xxl:     28px;
+$fs-xxxl:    32px;
+$fs-xxxxl:   36px;
+$fs-xxxxxl:  60px;
+$fs-xxxxxxl: 84px;
+
+// Semantic font size.
+//----------------------------------------------------------------------------
+$fs-h1: $fs-xxxxxxl !default;
+$fs-h2: $fs-xxxxl !default;
+$fs-h3: $fs-xl !default;
+$fs-h4: $fs-m !default;
+$fs-h5: $fs-s !default;
+$fs-h6: $fs-xxs !default;
+
+// Indentation.
+//----------------------------------------------------------------------------
+$indent-amount: 3em !default;
+
+// Vertical rhythm.
+//----------------------------------------------------------------------------
+$base-font-size:    $fs-m;       // Font-size of your body copy.
+$base-line-height:  6px;         // Setting the base-line-height half.
+                                 // the height of the desired body copy.
+                                 // line-height helps prevent sparse.
+                                 // leading at different font-sizes.

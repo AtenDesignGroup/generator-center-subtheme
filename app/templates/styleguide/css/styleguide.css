@@ -1,0 +1,253 @@
+body.sg {
+  background: white;
+  margin: 0;
+  padding: 0;
+}
+
+.sg--constrained {
+  padding-bottom: 3.33333em;
+  padding-top: 3.33333em;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+h1.sg-title,
+h2.sg-section-title,
+h3.sg-item-title,
+h4.sg-element-title,
+h5.sg-element-column-title {
+  color: #666666;
+  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  margin-top: 0;
+}
+
+h1.sg-title {
+  color: #333333;
+  font-size: 3.33333em;
+  line-height: 1.1em;
+  margin: 0 0.5em 1em;
+}
+@media (min-width: 800px) {
+  h1.sg-title {
+    font-size: 4.66667em;
+    line-height: 1.07143em;
+    margin: 0 0.35714em 0.71429em;
+  }
+}
+
+.sg-section {
+  border-top: 1px solid #999999;
+  clear: both;
+  margin-top: 3.33333em;
+}
+
+h2.sg-section-title {
+  font-size: 2em;
+  line-height: 1.16667em;
+  background: #f0f0f0;
+  border-bottom: 1px solid #f0f0f0;
+  color: #666666;
+  margin-bottom: 0;
+  padding: 0.41667em 0.83333em;
+}
+
+.sg-item {
+  overflow: hidden;
+  *zoom: 1;
+  clear: both;
+  padding: 0 1.66667em;
+}
+
+.sg-item-header {
+  overflow: hidden;
+  *zoom: 1;
+  border-bottom: 1px dotted #999999;
+}
+
+h3.sg-item-title {
+  font-size: 1.16667em;
+  line-height: 1.42857em;
+  background: white;
+  margin: 0;
+  color: #999999;
+  margin-bottom: 1.42857em;
+  margin-top: 1.42857em;
+}
+
+.sg-element {
+  clear: both;
+  padding-top: 3.33333em;
+}
+@media (min-width: 800px) {
+  .sg-element {
+    padding-left: 200px;
+  }
+  .sg-element > .sg-element-title {
+    float: left;
+    margin-left: -200px;
+  }
+}
+
+@media (min-width: 800px) {
+  .sg-element-tight {
+    padding-top: 1.66667em;
+  }
+}
+
+h4.sg-element-title {
+  font-size: 0.88889em;
+  line-height: 1.5em;
+  color: #999999;
+  text-transform: uppercase;
+}
+@media (min-width: 800px) {
+  h4.sg-element-title {
+    margin-bottom: 0;
+  }
+}
+
+.sg-element-column {
+  text-align: center;
+}
+@media (min-width: 800px) {
+  .sg-element-column {
+    float: left;
+    width: 50%;
+  }
+}
+@media (min-width: 1000px) {
+  .sg-element-column {
+    width: 25%;
+  }
+}
+
+h5.sg-element-column-title {
+  font-size: 0.77778em;
+  line-height: 1.28571em;
+  margin: 0;
+  color: #999999;
+  font-weight: normal;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.sg-palette {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.sg-color {
+  background-image: none;
+  position: relative;
+  height: 42px;
+  width: 42px;
+  margin-bottom: 1px;
+}
+.sg-color > strong {
+  font-size: 0.72222em;
+  line-height: 1.38462em;
+  color: #666666;
+  font-weight: bold;
+  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+  position: absolute;
+  left: 60px;
+  top: 0;
+  margin-top: 0.46154em;
+  white-space: nowrap;
+}
+.sg-color > span {
+  font-size: 0.72222em;
+  line-height: 1.38462em;
+  color: #999999;
+  position: absolute;
+  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+  left: 60px;
+  top: 0;
+  margin-top: 1.84615em;
+  white-space: nowrap;
+}
+@media (min-width: 800px) {
+  .sg-color {
+    float: left;
+    margin-bottom: 2.66667em;
+    height: 90px;
+    width: 90px;
+  }
+  .sg-color > strong {
+    left: 0;
+    top: 100%;
+  }
+  .sg-color > span {
+    left: 0;
+    top: 100%;
+    margin-top: 1.71429em;
+  }
+}
+
+.sg-color-main {
+  z-index: 100;
+}
+.sg-color-main:after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  left: -2px;
+  top: -2px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 4px solid black;
+}
+.sg-color-main:before {
+  content: "KEY";
+  font-size: 0.77778em;
+  line-height: 1.28571em;
+  color: white;
+  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 0.21429em 0.42857em;
+  background: black;
+}
+
+.sg-font-title {
+  margin: 0;
+  font-size: 3.33333em;
+  line-height: 1.1em;
+}
+@media (min-width: 800px) {
+  .sg-font-title {
+    font-size: 6.66667em;
+    line-height: 1.05em;
+  }
+}
+
+.sg-font-style {
+  margin: 0;
+  font-size: 1.66667em;
+  line-height: 2em;
+}
+@media (min-width: 800px) {
+  .sg-font-style {
+    font-size: 2.33333em;
+    line-height: 1.42857em;
+    float: left;
+    width: 50%;
+  }
+}
+@media (min-width: 1000px) {
+  .sg-font-style {
+    float: left;
+    width: 25%;
+  }
+}
+
+img {
+  max-width: 100%;
+  width: auto;
+}

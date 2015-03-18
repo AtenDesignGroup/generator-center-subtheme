@@ -1,0 +1,254 @@
+//
+// @file
+// Styleguide styles
+// ----------------------------------------------------------------------------
+
+
+@import "base/vars/*";
+@import "compass";
+@import "breakpoint";
+
+$ff-sg: "Helvetica Neue", Arial, Helvetica, sans-serif;
+
+//  Typography
+
+body.sg {
+  background: $white;
+  margin: 0;
+  padding: 0;
+}
+
+.sg--constrained {
+  padding-bottom: rhythm(10);
+  padding-top: rhythm(10);
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+h1.sg-title,
+h2.sg-section-title,
+h3.sg-item-title,
+h4.sg-element-title,
+h5.sg-element-column-title {
+  color: $gray-dark;
+  font-family: $ff-sg;
+  font-weight: bold;
+  margin-top: 0;
+}
+
+h1.sg-title {
+  color: $gray-darker;
+  @include adjust-font-size-to($fs-xxxxxl);
+  margin: 0 rhythm(5, $fs-xxxxxl) rhythm(10, $fs-xxxxxl);
+  @include breakpoint(800px, $no-query: '.lt-ie9') {
+    @include adjust-font-size-to($fs-h1);
+    margin: 0 rhythm(5, $fs-h1) rhythm(10, $fs-h1);
+  }
+}
+
+.sg-section {
+  border-top: 1px solid $gray;
+  clear: both;
+  margin-top: rhythm(10);
+}
+
+h2.sg-section-title {
+  @include adjust-font-size-to($fs-h2);
+  background: $gray-white;
+  border-bottom: 1px solid $gray-white;
+  color: $gray-dark;
+  margin-bottom: 0;
+  padding: rhythm(2.5, $fs-h2) rhythm(5, $fs-h2);
+}
+
+.sg-item {
+  @include clearfix;
+  clear: both;
+  padding: 0 rhythm(5);
+}
+
+.sg-item-header {
+  @include clearfix;
+  border-bottom: 1px dotted $gray;
+}
+
+h3.sg-item-title {
+  @include adjust-font-size-to($fs-l);
+  background: $white;
+  margin: 0;
+  color: $gray;
+  margin-bottom: rhythm(5, $fs-l);
+  margin-top: rhythm(5, $fs-l);
+}
+
+.sg-element {
+  clear: both;
+  padding-top: rhythm(10);
+  @include breakpoint(800px, $no-query: '.lt-ie9') {
+    padding-left: 200px;
+    > .sg-element-title {
+      float: left;
+      margin-left: -200px;
+    }
+  }
+}
+
+.sg-element-tight {
+  @include breakpoint(800px, $no-query: '.lt-ie9') {
+    padding-top: rhythm(5);
+  }
+}
+
+h4.sg-element-title {
+  @include adjust-font-size-to($fs-s);
+  color: $gray;
+  text-transform: uppercase;
+  @include breakpoint(800px, $no-query: '.lt-ie9') {
+    margin-bottom: 0;
+  }
+}
+
+.sg-element-column {
+  text-align: center;
+  @include breakpoint(800px, $no-query: '.lt-ie9') {
+    float: left;
+    width: 50%;
+  }
+  @include breakpoint(1000px, $no-query: '.lt-ie9') {
+    width: 25%;
+  }
+}
+
+h5.sg-element-column-title {
+  @include adjust-font-size-to($fs-xs, 3);
+  margin: 0;
+  color: $gray;
+  font-weight: normal;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+//  Colors
+//  --------------------------------------------------
+
+//  Palettes
+
+.sg-palette {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.sg-color {
+  background-image: none;
+  position: relative;
+
+  height: 42px;
+  width: 42px;
+  margin-bottom: 1px;
+
+  > strong {
+    @include adjust-font-size-to($fs-xxs, 3);
+    color: $gray-dark;
+    font-weight: bold;
+    font-family: $ff-sg;
+    position: absolute;
+    left: 60px;
+    top: 0;
+    margin-top: rhythm(1, $fs-xxs);
+    white-space: nowrap;
+  }
+
+  > span {
+    @include adjust-font-size-to($fs-xxs, 3);
+    color: $gray;
+    position: absolute;
+    font-family: $ff-sg;
+    left: 60px;
+    top: 0;
+    margin-top: rhythm(4, $fs-xxs);
+    white-space: nowrap;
+  }
+
+  @include breakpoint(800px, $no-query: '.lt-ie9') {
+    float: left;
+    margin-bottom: rhythm(8);
+    height: 90px;
+    width: 90px;
+
+    > strong {
+      left: 0;
+      top: 100%;
+    }
+    > span {
+      left: 0;
+      top: 100%;
+      margin-top: rhythm(4, $fs-xs);
+    }
+  }
+}
+
+.sg-color-main {
+  z-index: 100;
+
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    right: -2px;
+    left: -2px;
+    top: -2px;
+    @include box-sizing(border-box);
+    border: 4px solid $black;
+  }
+
+  &:before {
+    content:"KEY";
+    @include adjust-font-size-to($fs-xs);
+    color: $white;
+    font-family: $ff-sg;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: rhythm(.5, $fs-xs) rhythm(1, $fs-xs);
+    background: $black;
+  }
+}
+
+//  Typography
+//  --------------------------------------------------
+
+//  Fonts
+
+.sg-font-title {
+  margin: 0;
+  @include adjust-font-size-to(60px);
+  @include breakpoint(800px, $no-query: '.lt-ie9') {
+    @include adjust-font-size-to(120px);
+  }
+}
+
+.sg-font-style {
+  margin: 0;
+  @include adjust-font-size-to(30px, 10);
+  @include breakpoint(800px, $no-query: '.lt-ie9') {
+    @include adjust-font-size-to(42px, 10);
+    float: left;
+    width: 50%;
+  }
+  @include breakpoint(1000px, $no-query: '.lt-ie9') {
+    float: left;
+    width: 25%;
+  }
+}
+
+//  Images
+//  --------------------------------------------------
+
+//  Image
+
+img {
+  max-width: 100%;
+  width: auto;
+}

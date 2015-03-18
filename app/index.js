@@ -40,6 +40,12 @@ var DrupalPrototypeGenerator = yeoman.generators.Base.extend({
         message: 'Would you like to include the Susy Grid framework?',
         default: true
       },
+      {
+        type: 'confirm',
+        name: 'useStyleguide',
+        message: 'Would you like to include Ken Woodworth\'s Static Styleguide?',
+        default: true
+      },
     ];
 
     this.prompt(prompts, function (props) {
@@ -48,6 +54,7 @@ var DrupalPrototypeGenerator = yeoman.generators.Base.extend({
       this.themeDesc = props.themeDesc;
       this.useBreakpoint = props.useBreakpoint;
       this.useSusy = props.useSusy;
+      this.useStyleguide = props.useStyleguide;
       done();
     }.bind(this));
   },
@@ -99,6 +106,11 @@ var DrupalPrototypeGenerator = yeoman.generators.Base.extend({
     if (components.length <= 0) return;
 
     this.bowerInstall(components, options);
+  },
+
+  copyStyleguide: function () {
+    if (!this.useStyleguide) return;
+    this.directory('styleguide');
   }
 });
 
