@@ -1,5 +1,5 @@
 {
-  "name": "hrw",
+  "name": "<%= themeName %>",
   "version": "0.0.1",
   "authors": [
     "John Ferris <john@aten.io>"
@@ -8,12 +8,10 @@
   "ignore": [
     "**/.*",
     "node_modules",
-    "src/bower_components",
+    "src/bower",
     "test",
     "tests"
   ],
   "dependencies": {
-    "susy": "~2.2.1",
-    "compass-breakpoint": "~2.5.0"
   }
 }

@@ -11,6 +11,8 @@ var helpers = require('yeoman-generator').test;
 var os = require('os');
 
 describe('drupal-prototype:app', function () {
+  this.timeout(15000);
+
   var prompts = {
     themeName: 'Proto Test',
     themeId: 'proto-test'
@@ -19,7 +21,7 @@ describe('drupal-prototype:app', function () {
   before(function (done) {
     helpers.run(path.join(__dirname, '../app'))
       .inDir(path.join(os.tmpdir(), './temp-test'))
-      .withOptions({ 'skip-install': true })
+      .withOptions({ 'skip-install': false })
       .withPrompt(prompts)
       .on('end', done);
   });
@@ -38,8 +40,29 @@ describe('drupal-prototype:app', function () {
       'inc/node.inc',
       'polyfills/boxsizing.htc',
       'src/js/main.js',
-      'src/scss/screen.scss'
+      'src/scss/screen.scss',
     ]);
+  });
+
+  it('Installs Bower Components', function (done) {
+    assert.file([
+      '.bowerrc',
+      'src/bower/susy/bower.json',
+      'src/bower/compass-breakpoint/bower.json',
+    ]);
+
+    assert.fileContent('bower.json', 'version');
+    done();
+  });
+
+  it('Updates bower.json', function (done) {
+    assert.file('bower.json');
+    assert.fileContent([
+      ['bower.json', 'compass\-breakpoint'],
+      ['bower.json', 'susy'],
+      ['bower.json', '"name": "' + prompts.themeName + '"'],
+    ]);
+    done();
   });
 });
 

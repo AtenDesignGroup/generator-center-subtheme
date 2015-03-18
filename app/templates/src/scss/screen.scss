@@ -1,6 +1,6 @@
 // Bower components.
-@import "susy/sass/susy";
-@import "compass-breakpoint/stylesheets/breakpoint";
+<% if (useSusy) { %>@import "../bower/susy/sass/susy";<% } %>
+<% if (useBreakpoint) { %>@import "../bower/compass-breakpoint/stylesheets/breakpoint";<% } %>
 
 // Utilities.
 @import "utilities/utilities";
@@ -35,7 +35,6 @@
 @import "components/marquee";
 @import "components/message";
 @import "components/meta";
-@import "components/mode";
 @import "components/nav";
 @import "components/pager";
 @import "components/password";

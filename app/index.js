@@ -28,12 +28,26 @@ var DrupalPrototypeGenerator = yeoman.generators.Base.extend({
         message: 'What is your theme\'s description?',
         default: 'A custom theme implemtation for ' + _.startCase(this.appname) + '. Based on the Prototype starter theme.'
       },
+      {
+        type: 'confirm',
+        name: 'useBreakpoint',
+        message: 'Would you like to include Breakpoint Sass?',
+        default: true
+      },
+      {
+        type: 'confirm',
+        name: 'useSusy',
+        message: 'Would you like to include the Susy Grid framework?',
+        default: true
+      },
     ];
 
     this.prompt(prompts, function (props) {
       this.themeName = props.themeName;
       this.themeId = props.themeId;
       this.themeDesc = props.themeDesc;
+      this.useBreakpoint = props.useBreakpoint;
+      this.useSusy = props.useSusy;
       done();
     }.bind(this));
   },
@@ -60,11 +74,11 @@ var DrupalPrototypeGenerator = yeoman.generators.Base.extend({
 
     function processIncFile(file) {
       that.template('inc/_' + file + '.inc', 'inc/' + file + '.inc', context);
-    };
+    }
 
     function processIncFiles(files) {
       _.forEach(files, processIncFile);
-    };
+    }
 
     processIncFiles(incFiles);
 
@@ -83,6 +97,24 @@ var DrupalPrototypeGenerator = yeoman.generators.Base.extend({
     this.directory('polyfills');
     this.directory('src');
     this.directory('templates');
+  },
+
+  installBower: function () {
+    var options = {
+          'config.directory': 'src/bower',
+          'save': true
+        },
+        components = [];
+
+    this.template('bower.json');
+    this.copy('.bowerrc');
+
+    if (this.useBreakpoint) components.push('compass-breakpoint');
+    if (this.useSusy) components.push('susy');
+
+    if (components.length <= 0) return;
+
+    this.bowerInstall(components, options);
   }
 });
 
