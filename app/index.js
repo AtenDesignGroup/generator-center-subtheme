@@ -82,9 +82,11 @@ var DrupalPrototypeGenerator = yeoman.generators.Base.extend({
   },
 
   installBower: function () {
+    if (this.options['skip-install']) return;
+
     var options = {
           'config.directory': 'src/bower',
-          'save': true
+          'save': true,
         },
         components = [];
 

@@ -6,20 +6,20 @@ var helpers = require('yeoman-generator').test;
 var os = require('os');
 var _ = require('lodash');
 
-describe('drupal-prototype:app', function () {
+var prompts = {
+  themeName: 'Prototype Test',
+  themeId: 'prototype-test'
+};
+
+var snakeThemeId = _.snakeCase(prompts.themeId);
+
+describe('drupal-prototype:files', function () {
   this.timeout(15000);
-
-  var prompts = {
-    themeName: 'Prototype Test',
-    themeId: 'prototype-test'
-  };
-
-  var snakeThemeId = _.snakeCase(prompts.themeId);
 
   before(function (done) {
     helpers.run(path.join(__dirname, '../app'))
       .inDir(path.join(os.tmpdir(), './temp-test'))
-      .withOptions({ 'skip-install': false })
+      .withOptions({ 'skip-install': true })
       .withPrompt(prompts)
       .on('end', done);
   });
@@ -57,6 +57,18 @@ describe('drupal-prototype:app', function () {
       ['inc/page.inc', snakeThemeId + '_preprocess_page'],
     ]);
 
+  });
+});
+
+describe('drupal-prototype:bower', function () {
+  this.timeout(30000);
+
+  before(function (done) {
+    helpers.run(path.join(__dirname, '../app'))
+      .inDir(path.join(os.tmpdir(), './temp-test'))
+      .withOptions({ 'skip-install': false })
+      .withPrompt(prompts)
+      .on('end', done);
   });
 
   it('Installs Bower Components', function (done) {
