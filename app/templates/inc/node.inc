@@ -3,7 +3,7 @@
 /**
  * Implements hook_preprocess_node()
  */
-function <%= id %>_preprocess_node(&$vars) {
+function <%= themeId %>_preprocess_node(&$vars) {
 
   // Set shortcut variables. Hooray for less typing!
   $type = $vars['type'];

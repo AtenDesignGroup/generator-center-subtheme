@@ -2,21 +2,19 @@
 
 var path = require('path');
 var assert = require('yeoman-generator').assert;
-/*global describe, before, it*/
-'use strict';
-
-var path = require('path');
-var assert = require('yeoman-generator').assert;
 var helpers = require('yeoman-generator').test;
 var os = require('os');
+var _ = require('lodash');
 
 describe('drupal-prototype:app', function () {
   this.timeout(15000);
 
   var prompts = {
-    themeName: 'Proto Test',
-    themeId: 'proto-test'
+    themeName: 'Prototype Test',
+    themeId: 'prototype-test'
   };
+
+  var snakeThemeId = _.snakeCase(prompts.themeId);
 
   before(function (done) {
     helpers.run(path.join(__dirname, '../app'))
@@ -26,22 +24,39 @@ describe('drupal-prototype:app', function () {
       .on('end', done);
   });
 
-  it('creates files', function () {
+  it('Copies files', function () {
     assert.file([
-      prompts.themeId + '.info',
+      snakeThemeId + '.info',
       'template.php',
       'screenshot.png',
       'logo.png',
       '.gitignore',
+      'polyfills/boxsizing.htc',
+      'src/js/main.js',
+      'src/scss/screen.scss',
+    ]);
+  });
+
+  it('Creates .inc files', function () {
+    assert.file([
       'inc/block.inc',
       'inc/field.inc',
       'inc/form.inc',
       'inc/menu.inc',
       'inc/node.inc',
-      'polyfills/boxsizing.htc',
-      'src/js/main.js',
-      'src/scss/screen.scss',
     ]);
+
+    // Check preprocess function names.
+    assert.fileContent([
+      ['inc/block.inc', snakeThemeId + '_preprocess_block'],
+      ['inc/field.inc', snakeThemeId + '_preprocess_field'],
+      ['inc/form.inc', snakeThemeId + '_form_alter'],
+      ['inc/menu.inc', snakeThemeId + '_menu_tree__main_menu'],
+      ['inc/menu.inc', snakeThemeId + '_preprocess_menu_link'],
+      ['inc/node.inc', snakeThemeId + '_preprocess_node'],
+      ['inc/page.inc', snakeThemeId + '_preprocess_page'],
+    ]);
+
   });
 
   it('Installs Bower Components', function (done) {

@@ -44,7 +44,7 @@ var DrupalPrototypeGenerator = yeoman.generators.Base.extend({
 
     this.prompt(prompts, function (props) {
       this.themeName = props.themeName;
-      this.themeId = props.themeId;
+      this.themeId = _.snakeCase(props.themeId);
       this.themeDesc = props.themeDesc;
       this.useBreakpoint = props.useBreakpoint;
       this.useSusy = props.useSusy;
@@ -53,8 +53,6 @@ var DrupalPrototypeGenerator = yeoman.generators.Base.extend({
   },
 
   copyMainFiles: function () {
-    var that = this;
-
     var context = {
       name: this.themeName,
       id: this.themeId,
@@ -62,30 +60,14 @@ var DrupalPrototypeGenerator = yeoman.generators.Base.extend({
     };
 
     /**
-     * Process Inc Files
-     */
-    var incFiles = [
-      'block',
-      'field',
-      'form',
-      'menu',
-      'node'
-    ];
-
-    function processIncFile(file) {
-      that.template('inc/_' + file + '.inc', 'inc/' + file + '.inc', context);
-    }
-
-    function processIncFiles(files) {
-      _.forEach(files, processIncFile);
-    }
-
-    processIncFiles(incFiles);
-
-    /**
      * Process .info file
      */
     this.template('_prototype.info', this.themeId + '.info', context);
+
+    /**
+     * Process .inc files
+     */
+    this.directory('inc');
 
     /**
      * Process static directories and files

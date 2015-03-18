@@ -3,7 +3,7 @@
 /**
  * Implements hook_preprocess_page()
  */
-function <%= id %>_preprocess_page(&$vars) {
+function <%= themeId %>_preprocess_page(&$vars) {
   $preprocesses = array();
 
   // Set default page title behavior.

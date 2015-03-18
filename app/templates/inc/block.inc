@@ -7,7 +7,7 @@
 /**
  * Implements hook_preprocess_block().
  */
-function <%= id %>_preprocess_block(&$vars) {
+function <%= themeId %>_preprocess_block(&$vars) {
 
   // Set shortcut variables. Hooray for less typing!
   $block_id = $vars['block']->module . '-' . $vars['block']->delta;

@@ -7,14 +7,14 @@
 /**
  * Overrides theme_menu_tree().
  */
-function <%= id %>_menu_tree__main_menu($variables) {
+function <%= themeId %>_menu_tree__main_menu($variables) {
   return '<ul class="nav nav--main">' . $variables['tree'] . '</ul>';
 }
 
 /**
  * Implements hook_preprocess_menu_link().
  */
-function <% id %>_preprocess_menu_link(&$vars) {
+function <%= themeId %>_preprocess_menu_link(&$vars) {
 
   // Set shortcut variables. Hooray for less typing!
   $menu = $vars['element']['#original_link']['menu_name'];
