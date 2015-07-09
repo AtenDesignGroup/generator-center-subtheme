@@ -51,11 +51,11 @@ var DrupalPrototypeGenerator = yeoman.generators.Base.extend({
         name: 'gridFramework',
         message: 'Which grid framework would you like to use?',
         choices: [
-            'Singularity',
             'Susy',
+            'Singularity',
             'None'
           ],
-          default: 'Singularity',
+          default: 'Susy',
           filter: function(val) { return val.toLowerCase();
         }
       },
