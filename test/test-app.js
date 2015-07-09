@@ -9,7 +9,8 @@ var _ = require('lodash');
 var prompts = {
   themeName: 'Prototype Test',
   themeId: 'prototype-test',
-  packageManager: 'bower'
+  packageManager: 'Bower',
+  gridFramework: 'Susy'
 };
 
 var snakeThemeId = _.snakeCase(prompts.themeId);
@@ -32,7 +33,6 @@ describe('drupal-prototype:files', function () {
       'screenshot.png',
       'logo.png',
       '.gitignore',
-      'polyfills/boxsizing.htc',
       'src/js/main.js',
       'src/scss/screen.scss',
     ]);
