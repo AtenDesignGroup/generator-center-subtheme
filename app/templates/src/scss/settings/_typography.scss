@@ -7,8 +7,8 @@
 // Typefaces.
 //
 $ff-mono:  monospace;
-$ff-sans:  'Source Sans Pro', sans-serif;
-$ff-serif: 'Lexia W01', serif;
+$ff-sans:  sans-serif;
+$ff-serif: serif;
 
 //
 // Semantic fonts.
@@ -64,15 +64,6 @@ $font-sizes: (
     small: 36px 42px,
     medium: 48px 54px
   ),
-  //
-  // Links
-  //
-  // 14/24 // breadcrumb
-  // 16/24 // footer nav
-  // 18/24 // Utility nav
-  // 22/24 // main nav and sans
-  // 22/30 // more links and serif
-  // 24/48 // share button callout more links
   link--tiny: (
     default: 12px 15px,
     small: 14px 18px

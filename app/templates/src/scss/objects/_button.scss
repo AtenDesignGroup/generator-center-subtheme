@@ -1,18 +1,3 @@
 //
-// @file
-// Button mixins.
-// ---------------------------------------------------------------------------
-
-.button--print {
-  @include button;
-  @include button--large;
-  @include button-icon--after(vrem(4));
-
-  &:after {
-    background-size: 24px;
-    position: relative;
-    top: -2px;
-    right: -2px;
-    margin-left: 6px;
-  }
-}
+// Button objects.
+//

@@ -5,6 +5,22 @@
 $grid-column-count: 23;
 $grid-gutter-width: 0;
 
+<% if (gridFramework === 'susy') { %>
+  $susy: (
+  columns: $grid-column-count,
+  global-box-sizing: border-box,
+  gutters: $grid-gutter-width,
+  math: fluid,
+  output: isolate,
+  gutter-position: inside,
+);
+<% } %>
+
+<% if (gridFramework === 'singularity') { %>
+@include add-grid($grid-column-count);
+@include add-gutter($grid-gutter-width);
+<% } %>
+
 // Width.
 $w-full: 1200px;
 $w-content: 620px;

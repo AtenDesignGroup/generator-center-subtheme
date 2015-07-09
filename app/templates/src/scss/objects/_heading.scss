@@ -1,7 +1,6 @@
 //
-// @file
 // Heading and title styles.
-// ----------------------------------------------------------------------------
+//
 
 // Page titles
 .page-title {
@@ -12,8 +11,4 @@
 
 .title {
   @include font-size(title--huge);
-}
-
-.section-heading {
-  @include heading--barbell;
 }

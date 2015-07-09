@@ -54,35 +54,22 @@ $clr-table-even:   $white;           // Default table even row color
 //
 // Color Schemes
 //
+// Format:
+//
+// blue: (
+//   background: $blue,
+//   text: $white,
+//   heading: $white,
+//   link: $white,
+//   link-hover: $white,
+//   link-visited: $white
+// ),
+//
 $color-schemes: (
-  blue: (
-    background: $blue,
-    text: $white,
-    heading: $white,
-    link: $white,
-    link-hover: $white,
-    link-visited: $white
-  ),
-  teal: (
-    background: $teal-darker,
-    text: $white,
-    heading: $white,
-    link: $white,
-    link-hover: $white,
-    link-visited: $white
-  ),
   white: (
     background: $white,
   ),
   off-white: (
     background: $gray-white,
   ),
-  yellow: (
-    background: $yellow,
-    text: $white,
-    heading: $white,
-    link: rgba($white, .8),
-    link-hover: rgba($white, 1),
-    link-visited: rgba($white, .6)
-  )
 );

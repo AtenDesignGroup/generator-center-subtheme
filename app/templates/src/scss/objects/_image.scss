@@ -1,14 +1,13 @@
 //
-// @file
 // Image styles.
-// ----------------------------------------------------------------------------
+//
 
 //
 // Borders
 //
 .image-frame > img,
 .image-frame > a > img {
-  box-sizing: border-box;
+  border: 1px solid $clr-border;
   box-shadow: 0 1px 3px rgba($gray-dark, .6);
   padding: 4px;
   background-color: $white;

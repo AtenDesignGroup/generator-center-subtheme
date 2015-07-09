@@ -1,42 +1,11 @@
 //
 // Button links
 //
+
 .link--button {
   @include button;
   @include button--medium;
   @include button--primary;
-}
-
-.button--secondary {
-  @include button--secondary;
-}
-
-//
-// More links
-//
-.link--more {
-  > a {
-    @include link--go;
-  }
-}
-
-.link--permalink {
-  display: inline-block;
-  height: 24px;
-  width: 24px;
-  background-position: 50%;
-  text-indent: 30px;
-  white-space: nowrap;
-  overflow: hidden;
-  vertical-align: middle;
-  opacity: .6;
-  position: relative;
-  top: -3px;
-
-  &:hover,
-  &:focus {
-    opacity: .8;
-  }
 }
 
 .link--block {

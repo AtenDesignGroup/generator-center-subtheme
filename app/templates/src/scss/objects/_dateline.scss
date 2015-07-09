@@ -1,34 +1,9 @@
 //
-// @file
 // Dateline styles.
-// ----------------------------------------------------------------------------
+//
 
 .dateline {
   .title + & {
     margin-top: vrem(6);
-  }
-}
-
-.dateline-date + .dateline-comments {
-  margin-left: 20px;
-  position: relative;
-  display: inline-block;
-}
-
-@include bp(small) {
-  .dateline-date + .dateline-comments {
-    padding-left: 20px;
-
-    &:before {
-      content: "";
-      display: block;
-      background-color: $clr-border;
-      width: 1px;
-      height: 18px;
-      position: absolute;
-      top: 4px;
-      left: -.125em;
-      margin: auto;
-    }
   }
 }

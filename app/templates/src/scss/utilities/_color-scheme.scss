@@ -32,7 +32,7 @@
 // Sets the background color for a given scheme.
 //
 // $scheme - Color scheme map.
-@mixin color-scheme-backgound($scheme) {
+@mixin color-scheme-background($scheme) {
   background-color: map-get($scheme, "background");
 }
 

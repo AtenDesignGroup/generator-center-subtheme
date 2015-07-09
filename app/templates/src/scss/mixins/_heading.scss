@@ -3,32 +3,8 @@
 // Heading and title styles.
 // ----------------------------------------------------------------------------
 
-@mixin heading--barbell {
-  @include font-size(heading--large);
-  font-weight: $fw-semibold;
-  text-align: center;
-  margin-top: 0;
-  margin-bottom: vrem(5);
-  padding-bottom: 18px;
-  position: relative;
-
-  &:after {
-    content: "";
-    display: block;
-    height: 9px;
-    width: 68px;
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-  }
-}
-
 @mixin heading--subsection {
   @include font-size(heading--large);
-  font-family: $ff-serif;
-  font-weight: $fw-regular;
   margin-top: 0;
   margin-bottom: vrem(5);
 }
