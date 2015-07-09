@@ -1,4 +1,4 @@
-# generator-center-subtheme [![Build Status](https://secure.travis-ci.org/pixelwhip/generator-center-subtheme.png?branch=master)](https://travis-ci.org/pixelwhip/generator-drupal-prototype)
+# generator-center-subtheme [![Build Status](https://travis-ci.org/AtenDesignGroup/generator-center-subtheme.svg?branch=master)](https://travis-ci.org/AtenDesignGroup/generator-center-subtheme)
 
 > [Yeoman](http://yeoman.io) generator
 
