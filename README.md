@@ -1,4 +1,4 @@
-# generator-drupal-prototype [![Build Status](https://secure.travis-ci.org/pixelwhip/generator-drupal-prototype.png?branch=master)](https://travis-ci.org/pixelwhip/generator-drupal-prototype)
+# generator-center-subtheme [![Build Status](https://secure.travis-ci.org/pixelwhip/generator-center-subtheme.png?branch=master)](https://travis-ci.org/pixelwhip/generator-drupal-prototype)
 
 > [Yeoman](http://yeoman.io) generator
 
@@ -14,7 +14,7 @@ npm install -g yo
 To install generator-drupal-prototype from npm, run:
 
 ```bash
-npm install -g generator-drupal-prototype
+npm install -g generator-center-subtheme
 ```
 
 Create a directory for your new theme. The following assumes you are running the commands from the root of your Drupal project.
@@ -27,7 +27,7 @@ cd sites/all/themes/my_new_theme
 Finally, initiate the generator:
 
 ```bash
-yo drupal-prototype
+yo center-subtheme
 ```
 
 The generator will prompt you for a theme name and description then scaffold out a new theme.
