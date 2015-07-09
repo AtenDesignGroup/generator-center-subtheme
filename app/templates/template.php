@@ -5,9 +5,20 @@
  */
 
 /**
- * Scan and include all files in the /inc directory ending in .inc.
+ * Include .inc files.
  */
-$files = file_scan_directory(__DIR__ . '/inc', '/.inc/');
-foreach ($files as $filepath => $file) {
-  include $filepath;
+$include_files = array(
+  'block',
+  'boxes',
+  'breadcrumb',
+  'comment',
+  'field',
+  'form',
+  'menu',
+  'node',
+  'page',
+);
+
+foreach ($include_files as $filename) {
+  include 'inc/' . $filename . '.inc';
 }
