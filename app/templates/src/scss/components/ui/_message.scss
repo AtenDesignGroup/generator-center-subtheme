@@ -1,0 +1,32 @@
+//
+// Message styles.
+//
+
+//
+// Individual messages
+//
+.messages {
+  margin-bottom: rhythm(1);
+  padding: rhythm(1) $w-gutter-half;
+  color: $white;
+
+  a {
+    color: $white;
+    font-weight: bold;
+  }
+
+  // TODO: Rework these to .message--error etc.
+  &.error    { background-color: $clr-error; }
+  &.warning  { background-color: $clr-warning; }
+  &.status   { background-color: $clr-status; }
+}
+
+//
+// Devel overrides
+//
+.krumo-element,
+.krumo-footnote,
+.krumo-call,
+.krumo-preview {
+  color: $black;
+}

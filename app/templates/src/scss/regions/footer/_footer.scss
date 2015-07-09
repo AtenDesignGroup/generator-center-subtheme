@@ -1,0 +1,16 @@
+//
+// Footer styles.
+//
+@import "footer-nav";
+
+.footer {
+}
+
+.footer-copyright {
+  @include font-size("body--small");
+}
+
+.footer-contact {
+  @include font-size("body--small");
+}
+

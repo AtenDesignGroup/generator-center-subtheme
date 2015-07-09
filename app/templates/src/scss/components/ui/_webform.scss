@@ -1,0 +1,40 @@
+//
+// Webform styles.
+//
+
+.webform-client-form {
+  .form-actions {
+    margin-top: vrem(4);
+
+    @include bp(medium) {
+      float: right;
+      width: 75%;
+    }
+  }
+}
+
+.webform-component {
+  @include clearfix;
+
+  & + & {
+    margin-top: vrem(4);
+  }
+
+  .form-item-label {
+    display: block;
+    margin-bottom: vrem(1);
+  }
+
+  @include bp(medium) {
+    .form-item-label {
+      float: left;
+      width: 20%;
+
+      + input,
+      + .form-textarea-wrapper {
+        float: right;
+        width: 75%;
+      }
+    }
+  }
+}

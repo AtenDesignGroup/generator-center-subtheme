@@ -1,0 +1,30 @@
+//
+// @file
+// Icon styles.
+//
+// These styles deal with icons and hover effects.
+//
+
+@mixin icon--circle($width: 30px, $height: $width ) {
+  border-radius: $width / 2;
+  background-position: center;
+  display: block;
+  height: $height;
+  width: $width;
+}
+
+@mixin icon--type($inner-selector: "&:before", $width: 85px, $gutter: 20px, $direction: left) {
+  padding-#{$direction}: $width + $gutter;
+
+  #{$inner-selector} {
+    margin-#{$direction}: -1 * ($width + $gutter);
+    float: $direction;
+    @include icon--circle($width);
+  }
+
+  // This probably shouldn't be here. It's dealing with the action link
+  // on RSS feeds following a feature instead of being nested within it.
+  & + .feed-action {
+    padding-#{$direction}: $width + $gutter;
+  }
+}

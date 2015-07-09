@@ -1,0 +1,57 @@
+//
+// @file
+// Box styles.
+//
+// These styles deal with inner padding and border widths.
+//
+
+@mixin box--constrained($width: $w-full) {
+  max-width: $width;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin box--gutters($padding-left: $w-gutter, $padding-right: $padding-left) {
+  padding-left: $padding-left;
+  padding-right: $padding-right;
+}
+
+@mixin box--padded($top: vrem(11), $bottom: $top) {
+  padding-top: $top;
+  padding-bottom: $bottom;
+}
+
+@mixin box--bleed($always: false) {
+  @include box--gutters(20px);
+
+  @if ($always == false) {
+    @include bp(x-large) {
+      @include box--gutters(0);
+    }
+  }
+}
+
+@mixin box--inset() {
+  padding: vrem(6) 30px;
+
+  @include bp(medium) {
+    padding: vrem(8) 50px;
+  }
+}
+
+@mixin box--inset--small() {
+  padding: vrem(2) 20px;
+
+  @include bp(medium) {
+    padding: vrem(4) 25px;
+  }
+}
+
+@mixin absolute-center {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}

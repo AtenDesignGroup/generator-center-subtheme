@@ -1,0 +1,19 @@
+//
+// @file
+// Heading and title styles.
+// ----------------------------------------------------------------------------
+
+// Page titles
+.page-title {
+  margin-bottom: rhythm(4, $fs-4xl);
+  @include font-size(title--huge);
+  @include box--bleed;
+}
+
+.title {
+  @include font-size(title--huge);
+}
+
+.section-heading {
+  @include heading--barbell;
+}

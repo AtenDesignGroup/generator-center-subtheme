@@ -1,0 +1,17 @@
+//
+// Footer Navigation styles.
+//
+
+.footer-nav {
+  @include nav;
+  @include nav--inline;
+
+  > li + li {
+    margin-left: 12px;
+    padding-left: 12px;
+  }
+
+  > li > a {
+    @include font-size(link--small);
+  }
+}

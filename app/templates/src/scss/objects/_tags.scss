@@ -1,0 +1,24 @@
+//
+// @file
+// Dateline styles.
+// ----------------------------------------------------------------------------
+
+.tags-label {
+  margin-right: .5em;
+  display: inline-block;
+  font-size: 1rem;
+}
+
+.tags-list {
+  @include list--no-bullets;
+  display: inline-block;
+}
+
+.tags-item {
+  display: inline;
+  margin-right: 1em;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}

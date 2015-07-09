@@ -1,0 +1,55 @@
+//
+// @file
+// Color mixins.
+//
+
+// Returns a color value from a given scheme.
+//
+// $font-size - The $font-sizes map key.
+// $breakpoint-name - The desired breakpoint key.
+@function color-get-scheme($scheme, $schemes: $color-schemes) {
+  @if map-has-key($schemes, $scheme) {
+    @return map-get($schemes, $scheme);
+  } @else {
+    @warn $scheme " is not a key in $schemes.";
+  }
+}
+
+// Returns a color value from a given scheme.
+//
+// $font-size - The $font-sizes map key.
+// $breakpoint-name - The desired breakpoint key.
+@function color-scheme($scheme-name, $value, $schemes: $color-schemes) {
+  $scheme: color-get-scheme($scheme-name);
+  @if map-has-key($scheme, $value) {
+    @return map-get($scheme, $value);
+  } @else {
+    @warn $value " is not a key in $scheme.";
+  }
+}
+
+@mixin color-scheme($scheme-name) {
+  @if map-has-key($color-schemes, $scheme-name) {
+    $scheme: color-get-scheme($scheme-name);
+    background-color: map-get($scheme, "background");
+
+    color: map-get($scheme, text);
+
+    h2 {
+      color: map-get($scheme, heading);
+    }
+
+    a {
+      color: map-get($scheme, "link");
+
+      &:hover,
+      &:focus {
+        color: map-get($scheme, "link-hover");
+      }
+
+      &:visited {
+        color: map-get($scheme, "link-visited");
+      }
+    }
+  }
+}

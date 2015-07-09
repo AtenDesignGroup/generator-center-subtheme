@@ -1,0 +1,28 @@
+@mixin bp($breakpoint) {
+  $min-breakpoint: nth($breakpoint, 1);
+
+  @if map-has-key($breakpoints, $min-breakpoint) {
+    $min-breakpoint-in-px: map-get($breakpoints, $min-breakpoint);
+    $min-breakpoint-in-em: em($min-breakpoint-in-px, 16px);
+
+    // Handle min-max-width query.
+    @if length($breakpoint) == 2 and map-has-key($breakpoints, nth($breakpoint, 2)) {
+      $max-breakpoint-in-px: (map-get($breakpoints, nth($breakpoint, 2))) - 1px;
+      $max-breakpoint-in-em: em($max-breakpoint-in-px, 16px);
+      @include breakpoint($min-breakpoint-in-em $max-breakpoint-in-em) { @content };
+    }
+    // Single min-width query.
+    @else {
+      @include breakpoint($min-breakpoint-in-em) { @content };
+    }
+  } @else {
+    @ERROR $min-breakpoint + " is not a key in breakpoints.";
+  }
+}
+
+// Returns the breakpoint value for the provided key.
+//
+// $breakpoint-name - The breakpoint map key.
+@function get-breakpoint($breakpoint-name) {
+  @return map-get($breakpoints, $breakpoint-name);
+}

@@ -1,0 +1,30 @@
+//
+// Search styles.
+//
+
+.search-form {
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+
+  .form-wrapper {
+    padding-right: vrem(6);
+  }
+
+  input[type="text"] {
+    height: vrem(6);
+    border-right: 0;
+  }
+}
+
+.search-button[type="submit"] {
+  background-color: $yellow;
+  text-indent: 40px;
+  white-space: nowrap;
+  background-position: center;
+  height: vrem(6);
+  width: vrem(6);
+  position: absolute;
+  right: 0;
+  top: 0;
+}

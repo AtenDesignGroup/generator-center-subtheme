@@ -1,0 +1,27 @@
+//
+// Comment form
+//
+.comment-form {
+  .filter-wrapper {
+    padding: 0;
+    display: none;
+  }
+
+  .form-type-item .form-item-label {
+    display: inline;
+  }
+
+  .form-actions {
+    margin-top: vrem(3);
+  }
+
+  .form-type-item {
+    float: right;
+  }
+}
+
+#comment-body-add-more-wrapper {
+  .form-type-select {
+    margin-top: 0;
+  }
+}

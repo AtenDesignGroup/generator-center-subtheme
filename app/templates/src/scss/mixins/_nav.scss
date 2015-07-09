@@ -1,0 +1,192 @@
+//
+// Nav styles.
+//
+
+//
+// Base
+//
+@mixin nav {
+  margin: 0;
+  list-style: none;
+  padding: 0;
+}
+
+//
+// Inline
+//
+@mixin nav--inline {
+  > li,
+  > li > a {
+    display: inline-block;
+  }
+
+  > li + li {
+    margin-top: 0;
+  }
+}
+
+//
+// Stacked
+//
+@mixin nav--stacked {
+  > li,
+  > li > a {
+    display: block;
+  }
+}
+
+//
+// Dropdown
+//
+
+@mixin nav--dropdown {
+  > li {
+    position: relative;
+
+    &:hover,
+    &:focus {
+      > ul {
+        display: block;
+        top: 100%;
+        left: 0;
+      }
+    }
+  }
+
+  ul {
+    display: none;
+    position: absolute;
+    @include nav--stacked;
+  }
+}
+
+@mixin nav-item--toggle($size: vrem(4)) {
+  padding-right: $size;
+  position: relative;
+
+  > .toggle {
+    display: block;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: $size;
+    height: $size;
+    text-indent: 150%;
+    white-space: nowrap;
+    background-position: center;
+    background-color: transparent;
+    transition: transform .15s;
+
+    &[aria-expanded="true"] {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+//
+// Tabs and Pills
+//
+
+@mixin nav--tabs {
+  @include clearfix;
+  @include nav;
+  border-bottom: 1px solid $clr-border; // Give the tabs something to sit on
+
+  > li {
+    margin-top: 0;
+    margin-bottom: -1px; // Make the list-items overlay the bottom border
+    float: left;
+  }
+
+  > li > a {
+    position: relative;
+    display: block;
+    margin-right: 4px;
+    border: 1px solid $gray-lightest;
+    background-color: $gray-white;
+    @include font-size(link--tiny);
+    color: $gray;
+    text-transform: uppercase;
+    padding: 6px 12px;
+    text-decoration: none;
+
+    &:after {
+      transition: all .25s linear;
+      content: "";
+      position: absolute;
+      left: -1px;
+      right: -1px;
+      top: -1px;
+      margin: auto;
+      background: rgba($blue, 0);
+      height: 3px;
+    }
+
+    &:hover {
+      border-color: $gray-lighter $gray-lighter $white;
+      background-color: $white;
+      transition: none;
+
+      &:after {
+        transition: none;
+        background: $blue;
+      }
+    }
+
+    &:hover {
+      border-color: $gray-light $gray-light $white;
+    }
+  }
+
+  > .active > a,
+  > .active > a:hover {
+    color: $gray-darker;
+    background-color: $gray-lightest;
+    background-color: $white;
+    background-image: none;
+    border: 1px solid #ddd;
+    border-bottom-color: transparent;
+    color: $blue;
+    cursor: default;
+    margin-bottom: -1px;
+
+    &:after {
+      content: "";
+      position: absolute;
+      left: -1px;
+      right: -1px;
+      top: -1px;
+      background: $blue;
+      height: 3px;
+    }
+  }
+}
+
+@mixin nav--tabs--stacked {
+  border-bottom: none;
+
+  > li {
+    margin-bottom: 0;
+  }
+
+  > li > a {
+    box-shadow:
+      1px 1px 1px 0 $white inset,
+      -1px 0 0 0 rgba($gray-dark, .2) inset;
+    border-right-color: $gray-white;
+    margin-left: -2px;
+
+    &:hover {
+      border-color: $gray-light $white $gray-light $gray-light;
+    }
+  }
+
+  > .active > a,
+  > .active > a:hover {
+    box-shadow: 1px 1px 1px 0 $white inset;
+    margin-right: -1px;
+    border-right-color: transparent;
+    border-bottom-color: #ddd;
+  }
+}

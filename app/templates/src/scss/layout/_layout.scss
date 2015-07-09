@@ -1,0 +1,15 @@
+//
+// Page layout styles.
+//
+
+@import "basic";
+@import "home";
+
+// Set the page width.
+.l--constrained {
+  @include box--constrained;
+}
+
+.l--bleed {
+  @include box--bleed;
+}

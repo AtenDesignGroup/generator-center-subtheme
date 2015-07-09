@@ -10,29 +10,39 @@
 $white:             #ffffff;
 $black:             #000000;
 
-$gray-white:        #f0f0f0;
-$gray-lightest:     #dbdbdb;
-$gray-lighter:      #c7c7c7;
-$gray-light:        #b3b3b3;
-$gray:              #999;
-$gray-dark:         #666;
-$gray-darker:       #444;
-$gray-darkest:      #292929;
-$gray-black:        #141414;
+$gray-white:        #f6f6f6;
+$gray-lightest:     #f0f0f0;
+$gray-lighter:      #e0e0e0;
+$gray-light:        #d0d0d0;
+$gray:              #666;
+$gray-dark:         #444;
+$gray-darker:       #333;
+$gray-darkest:      #222;
+$gray-black:        #111;
 
-$red:               #b52828;
+$blue:              #003d79;
 
-$green:             #9cc524;
+$red:               #d31245;
 
-$blue:              #4168b6;
+$green:             #81af10;
+$green-dark:        #5a9829;
+
+$teal:              #62cae3;
+$teal-dark:         #2db3d3;
+$teal-darker:       #00788a;
+
+$yellow:            #faaf4c;
+$yellow-dark:       #f3a135;
+
 
 //
 // Semantic colors
 //
-$clr-neutral:      $gray-light;      // Default nuetral color
-$clr-text:         $gray-darker;     // Default body copy color
+$clr-neutral:      $gray;      // Default nuetral color
+$clr-text:         $gray;     // Default body copy color
 $clr-link:         $blue;            // Default link color
-$clr-accent:       $green;           // Default accent color
+$clr-heading:      $gray-dark;           // Default accent color
+$clr-accent:       $gray-dark;           // Default accent color
 $clr-border:       $gray-lighter;    // Default border and required color
 $clr-status:       $green;      // Default status color
 $clr-warning:      $blue;            // Default warning color
@@ -40,3 +50,39 @@ $clr-error:        $red;             // Default error and required color
 $clr-table-border: $gray-light;      // Default table border color
 $clr-table-odd:    $gray-white;      // Default table odd row color
 $clr-table-even:   $white;           // Default table even row color
+
+//
+// Color Schemes
+//
+$color-schemes: (
+  blue: (
+    background: $blue,
+    text: $white,
+    heading: $white,
+    link: $white,
+    link-hover: $white,
+    link-visited: $white
+  ),
+  teal: (
+    background: $teal-darker,
+    text: $white,
+    heading: $white,
+    link: $white,
+    link-hover: $white,
+    link-visited: $white
+  ),
+  white: (
+    background: $white,
+  ),
+  off-white: (
+    background: $gray-white,
+  ),
+  yellow: (
+    background: $yellow,
+    text: $white,
+    heading: $white,
+    link: rgba($white, .8),
+    link-hover: rgba($white, 1),
+    link-visited: rgba($white, .6)
+  )
+);

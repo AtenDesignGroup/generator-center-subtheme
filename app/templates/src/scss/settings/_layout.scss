@@ -12,3 +12,15 @@ $w-sidebar: 320px;
 $w-sidebar-first: 320px;
 $w-gutter: 30px;
 $w-gutter-half: $w-gutter / 2;
+
+// Setting element spacing
+// 2, 4, 6, 8
+$sp-tight:  12px;
+$sp-normal: 24px;
+$sp-loose:  36px;
+$sp-sparse: 48px;
+
+//
+// Section spacing scale
+// default 4, 8, 10, 16
+// small 6, 12, 16, 24

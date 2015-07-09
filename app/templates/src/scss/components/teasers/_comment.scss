@@ -1,0 +1,57 @@
+//
+// Comment styles.
+//
+
+// Single Comment
+.comment {
+  margin-bottom: vrem(12);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.comment-content {
+  margin-bottom: vrem(3);
+}
+
+.comment-byline {
+  float: left;
+  margin-bottom: vrem(2);
+
+  .username {
+    font-weight: bold;
+  }
+}
+
+.comment-attribution {
+}
+
+.comment-links {
+  float: right;
+  padding-right: 10px;
+  margin: 0;
+
+  .nav-link {
+    @include font-size(link--small);
+    padding-top: vrem(.5);
+    padding-bottom: vrem(.5);
+    margin-left: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+}
+
+.comment-nav {
+  @include nav;
+
+  > li {
+    display: inline-block;
+    margin-top: 0;
+  }
+}
+
+span.comment-new {
+  color: $red;
+}
+

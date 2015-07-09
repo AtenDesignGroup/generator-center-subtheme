@@ -1,11 +1,11 @@
 //
-// @file
 // Breakpoint variables.
 //
-
-$mobile: em(480px, 16px);
-$mobile-wide: em(600px, 16px);
-$tablet: em(768px, 16px);
-$tablet-wide: em(992px, 16px);
-$desktop: em(1080px, 16px);
-$desktop-wide: em(1382px, 16px);
+$breakpoints: (
+  default:  480px,
+  small:    600px,
+  medium:   768px,
+  large:    992px,
+  x-large:  1240px,
+  2x-large:  1382px
+);

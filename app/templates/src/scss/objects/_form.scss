@@ -1,0 +1,122 @@
+//
+// @file
+// Form component.
+//
+// Ideally we would be sticking to .form-item, .form-item-label and
+// .form-item-description, but we need to make some allowances for drupal's
+// default markup.
+// ----------------------------------------------------------------------------
+
+input[type="submit"],
+button {
+  @include button;
+  @include button--medium;
+  @include button--primary;
+}
+
+.form-item,
+.form-actions {
+  margin: 0;
+}
+
+.form-item + .form-item {
+  margin-top: vrem(2);
+}
+
+.form-item-description {
+  @include adjust-font-size-to($fs-xs);
+  font-family: $ff-sans;
+}
+
+
+//
+// Fieldsets
+//
+.fieldset-legend {
+  font-family: $ff-sans;
+  font-weight: bold;
+}
+
+.fieldset-description {
+  @include adjust-font-size-to($fs-s);
+  margin-bottom: rhythm(4, $fs-s);
+  font-family: $ff-sans;
+}
+
+
+//
+// Autocomplete
+//
+html.js input.form-autocomplete {
+  background-position: 100% 6px;
+
+  &.throbbing {
+    background-position: 100% -14px;
+  }
+}
+
+
+//
+// Checkboxes and Radios
+//
+
+// Since these are groups of related form-items, we reduce the spacing a bit.
+.form-type-checkboxes .form-type-checkbox,
+.form-type-radios .form-type-radio {
+  margin: rhythm(1) 0;
+}
+
+
+//
+// Errors
+//
+input.error,
+textarea.error,
+select.error {
+  border: 2px solid red;
+}
+
+
+//
+// Machine Names
+//
+.machine-name-label {
+  font-family: $ff-sans;
+  font-weight: bold;
+}
+
+.machine-name-value {
+  font-family: $ff-mono;
+  margin: 0 .5em;
+}
+
+
+//
+// Required
+//
+.form-required,
+.marker {
+  color: $clr-error;
+  font-weight: bold;
+}
+
+
+//
+// Vertical Tabs
+//
+
+// These are based on the FAPI vertical tab markup which is different than the
+//  nav component.
+// @todo See if consolidating these is feasible.
+// @todo Consolidate these styles with core's vertical-tabs.css
+.vertical-tab-button {
+  position: relative;
+  font-family: $ff-sans;
+}
+
+// Setting the active tab by id assumes only one set of vertical tabs per page.
+// @todo Change #active-vertical-tab to .active-vertical-tab
+#active-vertical-tab {
+  // Removes the ackward box outline on :focus
+  top: 0;
+}

@@ -1,6 +1,10 @@
-// Bower components.
-@import "susy/sass/susy";
-@import "compass-breakpoint/stylesheets/breakpoint";
+// External packages.
+<% if (useBreakpoint && packageManager === 'eyeglass') { %>@import "breakpoint";<% } %>
+<% if (gridFramework === 'singularity' && packageManager === 'bower') { %>@import "../bower/singularity/stylesheets/singularitygs";<% } %>
+<% if (gridFramework === 'susy' && packageManager === 'bower') { %>@import "../bower/susy/sass/susy";<% } %>
+<% if (useBreakpoint && packageManager === 'bower') { %>@import "../bower/compass-breakpoint/stylesheets/breakpoint";<% } %>
+<% if (gridFramework === 'singularity' && packageManager === 'eyeglass') { %>@import "singularitygs";<% } %>
+<% if (gridFramework === 'susy' && packageManager === 'eyeglass') { %>@import "susy";<% } %>
 
 // Utilities.
 @import "utilities/utilities";
@@ -8,10 +12,11 @@
 // Variables.
 @import "settings/settings";
 
+// Mixins.
+@import "mixins/mixins";
+
 // Base - Generalized global styles.
-@import "base/normalize";
 @import "base/base";
 
-// Components - Styles specific to components.
-@import "components/image";
-@import "components/table";
+// Objects - Descrete chunks of ui.
+@import "objects/objects";

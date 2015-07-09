@@ -1,0 +1,13 @@
+//
+// @file
+// Button settings.
+//
+
+@import "color";
+
+$clr-btn--primary:   $blue;
+$clr-btn--secondary: $yellow;
+$clr-btn--tertiary:  $gray-light;
+$btn-style: 'none';
+$btn-highlight-strength: .5;
+$btn-shadow-strength: .5;

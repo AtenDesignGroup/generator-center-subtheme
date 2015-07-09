@@ -1,0 +1,76 @@
+//
+// Pager styles.
+//
+
+// Pager ul
+.pager {
+  padding-left: 0;
+  margin: vrem(8) auto 0;
+  text-align: center;
+  list-style: none;
+}
+
+%pager-item {
+  display: inline-block;
+  margin-top: 0;
+}
+
+%pager-item-inner {
+  @include adjust-font-size-to($fs-xs);
+  margin: rhythm(1, $fs-xs) 2px;
+  padding: 2px 8px;
+  text-transform: uppercase;
+
+}
+
+// Pager links
+.pager-first,
+.pager-previous,
+.pager-item,
+.pager-next,
+.pager-last {
+  @extend %pager-item;
+
+  > a {
+    @extend %pager-item-inner;
+    color: $gray-dark;
+    background-color: $white;
+    text-decoration: none;
+    transition: .3s all;
+
+    &:hover {
+      color: $white;
+      background-color: $gray-dark;
+      text-decoration: none;
+    }
+  }
+}
+
+.pager-ellipsis {
+  @extend %pager-item;
+}
+
+.pager-current {
+  @extend %pager-item;
+
+  > span {
+    @extend %pager-item-inner;
+    color: $white;
+    background-color: $blue;
+  }
+}
+
+.pager-load-more {
+  a {
+    &:hover,
+    &:focus {
+      background-color: $gray-lighter;
+      color: $gray-dark;
+    }
+  }
+
+  .throbber {
+    position: relative;
+    top: 5px;
+  }
+}

@@ -1,0 +1,95 @@
+//
+// @file
+// Nav styles.
+// ----------------------------------------------------------------------------
+
+.nav {
+  @include nav;
+}
+
+.nav-tabs {
+  @include nav--tabs;
+}
+
+.nav--grid {
+  @include nav;
+  @include box--bleed;
+
+  > li {
+    background-color: $blue;
+
+    &:nth-child(2n) { background-color: #00788a; }
+    &:nth-child(3n) { background-color: #2db3d3; }
+    &:nth-child(4n) { background-color: #5a9829; }
+    &:nth-child(5n) { background-color: #81af10; }
+  }
+
+  > li + li {
+    margin-top: 0;
+  }
+
+  > li > a {
+    display: block;
+    color: white;
+    padding: vrem(3) 10px;
+    text-align: center;
+    @include font-size(link--huge);
+    font-family: $ff-serif;
+    text-decoration: none;
+    background-color: inherit;
+    position: relative;
+    transition: .1s ease-out transform;
+    z-index: 1;
+
+    &:before {
+      content: "";
+      display: block;
+      background-color: inherit;
+      position: absolute;
+      @include absolute-center;
+      z-index: -1;
+    }
+
+    &:hover,
+    &:focus {
+      z-index: 2;
+      transform: scale(1.05, 1.05);
+      transition: .3s ease-out transform;
+    }
+  }
+
+  @include bp(medium large) {
+    > li > a {
+      font-size: 18px;
+    }
+  }
+
+  @include bp(medium) {
+    display: table-row;
+
+    > li {
+      display: table-cell;
+      @include nup-item(5);
+      vertical-align: middle;
+      height: 147px;
+      border-right: 3px solid white;
+
+      &:last-child {
+        border-right: 0;
+      }
+
+      > a {
+        padding: vrem(7) 10px;
+
+        &:hover,
+        &:focus {
+          transform: scale(1.1, 1.1);
+        }
+
+        &:before {
+          height: 148px;
+        }
+      }
+    }
+  }
+}

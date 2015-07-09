@@ -1,0 +1,228 @@
+//
+// Default tag styles.
+//
+// The only class selectors allowed in this file are those intended
+// for use within the WYSIWYG editor.
+
+* {
+  box-sizing: border-box;
+}
+
+// Establish Vertical Rhythm.
+* html {
+  font-size: 100% * $base-font-size / $browser-default-font-size;
+}
+
+html {
+  font-size: $base-font-size;
+  font-family: $ff-body;
+  // Override the default line height to allow for smaller baseline increments.
+  @include font-size(body);
+}
+
+body {
+  color: $clr-text;
+}
+
+// Use border-box by default on elements typically used for layout.
+div,
+section,
+header,
+footer,
+aside,
+figure {
+  box-sizing: border-box;;
+}
+
+
+//
+// Headings
+//
+h1 {
+  @include font-size(heading--huge);
+  margin: 0;
+}
+
+h2 {
+  @include font-size(heading--large);
+  @include space-between-content(48px);
+  margin-bottom: 0;
+}
+
+h3 {
+  @include font-size(heading);
+  @include space-between-content(48px);
+  margin-bottom: 0;
+}
+
+h4 {
+  @include font-size(heading--small);
+  @include space-between-content(48px);
+  margin-bottom: 0;
+}
+
+h5 {
+  @include font-size(heading--tiny);
+  @include space-between-content(48px);
+  margin-bottom: 0;
+}
+
+h6 {
+  @include font-size(heading--tiny);
+  @include space-between-content(48px);
+  margin-bottom: 0;
+}
+
+
+//
+// Links
+//
+a {
+  @include link-colors($clr-link, darken($clr-link, 10%));
+
+  h1 > &,
+  h2 > &,
+  h3 > &,
+  h4 > &,
+  h5 > &,
+  h6 > & {
+    @include link--underline-on-hover;
+  }
+}
+
+strong,
+b {
+  font-weight: $fw-bold;
+}
+
+
+//
+// Copy
+//
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+  @include space-between-content(24px);
+  @include space-between-headings(24px);
+}
+
+blockquote {
+  margin: vrem(4) 0 vrem(4) 20px;
+  font-style: italic;
+
+  @include bp(small) {
+    margin-left: 30px;
+  }
+}
+
+
+//
+// Images
+//
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+figure {
+  margin: 0;
+
+  img {
+    display: block;
+  }
+}
+
+//
+// Lists
+//
+
+ul,
+ol {
+  @include space-between-content(24px);
+  margin-bottom: 0;
+  padding-left: 20px;
+
+  @include bp(small) {
+    padding-left: 30px;
+  }
+
+  > li + li {
+    margin-top: vrem(1);
+  }
+}
+
+//
+// Definition Lists
+//
+dl {
+  margin-bottom: vrem(3);
+}
+
+dt {
+  font-weight: $fw-bold;
+}
+
+dd {
+  margin-left: $w-gutter;
+}
+
+input,
+textarea {
+  border: 1px solid $clr-border;
+  padding: vrem(1);
+  max-width: 100%;
+}
+
+//
+// Tables
+//
+table {
+  @include font-size("body--small");
+  max-width: 100%;
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  @include space-between-content(24px);
+  @include space-between-headings(24px);
+  text-align: left;
+}
+
+thead {
+  th {
+    vertical-align: bottom;
+  }
+}
+
+th,
+td {
+  padding: 8px;
+  vertical-align: top;
+  border-top: 1px solid $clr-table-border;
+}
+
+th {
+  font-weight: $fw-bold;
+}
+
+// Remove top border from thead by default
+caption + thead tr:first-child th,
+caption + thead tr:first-child td,
+colgroup + thead tr:first-child th,
+colgroup + thead tr:first-child td,
+thead:first-child tr:first-child th,
+thead:first-child tr:first-child td {
+  border-top: 0;
+}
+
+// Account for multiple tbody instances
+tbody + tbody {
+  border-top: 2px solid $clr-table-border;
+}
+
+tr.odd  { background-color: $clr-table-odd; }
+tr.even { background-color: $clr-table-even; }
+
+:focus {
+  outline-width: 1px;
+  outline-style: dashed;
+}

@@ -1,6 +1,10 @@
-// Bower components.
-<% if (useSusy) { %>@import "../bower/susy/sass/susy";<% } %>
-<% if (useBreakpoint) { %>@import "../bower/compass-breakpoint/stylesheets/breakpoint";<% } %>
+// External packages.
+<% if (useBreakpoint && packageManager === 'eyeglass') { %>@import "breakpoint";<% } %>
+<% if (gridFramework === 'singularity' && packageManager === 'bower') { %>@import "../bower/singularity/stylesheets/singularitygs";<% } %>
+<% if (gridFramework === 'susy' && packageManager === 'bower') { %>@import "../bower/susy/sass/susy";<% } %>
+<% if (useBreakpoint && packageManager === 'bower') { %>@import "../bower/compass-breakpoint/stylesheets/breakpoint";<% } %>
+<% if (gridFramework === 'singularity' && packageManager === 'eyeglass') { %>@import "singularitygs";<% } %>
+<% if (gridFramework === 'susy' && packageManager === 'eyeglass') { %>@import "susy";<% } %>
 
 // Utilities.
 @import "utilities/utilities";
@@ -8,39 +12,23 @@
 // Variables.
 @import "settings/settings";
 
+// Mixins.
+@import "mixins/mixins";
+
 // Base - Generalized global styles.
-@import "base/normalize";
 @import "base/base";
 
+// Objects - Descrete chunks of ui.
+@import "objects/objects";
+
+// Components - Styles specific to components.
+@import "components/components";
+
+// Regions - Styles for specific regions.
+@import "regions/regions";
+
 // Layouts - Styles specific to page layout.
-@import "layout/page";
-@import "layout/region--above-content";
-@import "layout/region--footer";
-@import "layout/region--header";
-@import "layout/region--main";
-@import "layout/region--messages";
+@import "layout/layout";
 
 // Libraries - Modified 3rd party CSS.
 // @import "libraries/styleguide"; // Enable if using styleguide module.
-
-// Components - Styles specific to components.
-// Defaults
-@import "components/button";
-@import "components/comment";
-@import "components/form";
-@import "components/heading";
-@import "components/image";
-@import "components/link";
-@import "components/list";
-@import "components/marquee";
-@import "components/message";
-@import "components/meta";
-@import "components/nav";
-@import "components/pager";
-@import "components/password";
-@import "components/search";
-@import "components/table";
-@import "components/view";
-
-@import "components/field/field";
-@import "components/block/block";

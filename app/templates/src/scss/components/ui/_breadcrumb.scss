@@ -1,0 +1,46 @@
+//
+// Breadcrumb styles.
+//
+
+//
+// Individual messages
+//
+.nav--breadcrumb {
+  @include nav;
+  @include nav--inline;
+  border-bottom: 1px solid $clr-border;
+  padding-top: vrem(3);
+  padding-bottom: vrem(3);
+  @include box--bleed;
+
+  > li {
+    vertical-align: middle;
+    @include font-size(link--small);
+  }
+
+  > li + li {
+    margin-top: 0;
+
+    &:before {
+      content: "\3009";
+      margin-left: 10px;
+      margin-right: 4px;
+      font-size: .75em;
+    }
+  }
+
+  > li > a {
+    @include link--underline-on-hover;
+  }
+
+  > li:first-child > a {
+    text-decoration: none;
+    height: 21px;
+    width: 21px;
+    background-position: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-indent: 30px;
+    display: block;
+  }
+}

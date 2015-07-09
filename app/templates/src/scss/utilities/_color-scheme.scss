@@ -1,0 +1,90 @@
+//
+// @file
+// Color mixins.
+//
+
+// Returns a scheme from a map of schemes.
+//
+// $scheme - The specific color-scheme key.
+// $schemes - A map of color-schemes.
+@function color-scheme-get($scheme, $schemes: $color-schemes) {
+  @if map-has-key($schemes, $scheme) {
+    @return map-get($schemes, $scheme);
+  } @else {
+    @warn $scheme " is not a key in $schemes.";
+  }
+}
+
+// Returns a color value from a given scheme.
+//
+// $scheme-name - The specific color-scheme key.
+// $value - The desired value key.
+// $schemes - A map of color-schemes.
+@function color-scheme($scheme-name, $value, $schemes: $color-schemes) {
+  $scheme: color-scheme-get($scheme-name);
+  @if map-has-key($scheme, $value) {
+    @return map-get($scheme, $value);
+  } @else {
+    @warn $value " is not a key in $scheme.";
+  }
+}
+
+// Sets the background color for a given scheme.
+//
+// $scheme - Color scheme map.
+@mixin color-scheme-backgound($scheme) {
+  background-color: map-get($scheme, "background");
+}
+
+// Sets the text color for a given scheme.
+//
+// $scheme - Color scheme map.
+@mixin color-scheme-text($scheme) {
+  color: map-get($scheme, text);
+}
+
+// Sets the link colors for a given scheme.
+//
+// $scheme - Color scheme map.
+@mixin color-scheme-link($scheme) {
+  a {
+    color: map-get($scheme, "link");
+
+    &:hover,
+    &:focus {
+      color: map-get($scheme, "link-hover");
+    }
+
+    &:visited {
+      color: map-get($scheme, "link-visited");
+    }
+  }
+}
+
+// Sets color values for a given scheme.
+//
+// $scheme-name - Color scheme name.
+// $set - 'all', 'background', 'text', 'link'.
+@mixin color-scheme($scheme-name, $set: 'all') {
+  @if map-has-key($color-schemes, $scheme-name) {
+    $scheme: color-scheme-get($scheme-name);
+
+    @if ($set == 'all') {
+      @include color-scheme-background($scheme);
+      @include color-scheme-text($scheme);
+      @include color-scheme-link($scheme);
+    }
+
+    @else if ($set == 'background') {
+      @include color-scheme-background($scheme);
+    }
+
+    @else if ($set == 'text') {
+      @include color-scheme-text($scheme);
+    }
+
+    @else if ($set == 'link') {
+      @include color-scheme-link($scheme);
+    }
+  }
+}

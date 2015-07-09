@@ -1,0 +1,36 @@
+// @mixin space-between($height, $siblings: all self h1 h2 heading .title body title ) {
+//   margin-top: $height convert to rems.
+
+//   foreach siblings
+//   & + &,
+//   h2 + & {
+//     margin-top: $height;
+//   }
+// }
+
+// @mixin space-between(tight, heading);
+// @mixin space-between(sparce, body);
+
+@mixin space-between-content($height) {
+  p + &,
+  ul + &,
+  ol + &,
+  dl + &,
+  table + &,
+  figure + &,
+  img + &,
+  blockquote + & {
+    margin-top: rem($height);
+  }
+}
+
+@mixin space-between-headings($height) {
+  h1 + &,
+  h2 + &,
+  h3 + &,
+  h4 + &,
+  h5 + &,
+  h6 + & {
+    margin-top: rem($height);
+  }
+}
