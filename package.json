@@ -1,6 +1,6 @@
 {
   "name": "generator-drupal-prototype",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Yeoman generator for Prototype drupal theme",
   "license": "MIT",
   "main": "app/index.js",

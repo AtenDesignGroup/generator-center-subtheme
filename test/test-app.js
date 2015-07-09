@@ -8,7 +8,8 @@ var _ = require('lodash');
 
 var prompts = {
   themeName: 'Prototype Test',
-  themeId: 'prototype-test'
+  themeId: 'prototype-test',
+  packageManager: 'bower'
 };
 
 var snakeThemeId = _.snakeCase(prompts.themeId);
