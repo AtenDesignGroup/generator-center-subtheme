@@ -9,13 +9,13 @@ var _ = require('lodash');
 var prompts = {
   themeName: 'Prototype Test',
   themeId: 'prototype-test',
-  packageManager: 'Bower',
-  gridFramework: 'Susy'
+  packageManager: 'bower',
+  gridFramework: 'susy'
 };
 
 var snakeThemeId = _.snakeCase(prompts.themeId);
 
-describe('drupal-prototype:files', function () {
+describe('center-subtheme:files', function () {
   this.timeout(15000);
 
   before(function (done) {
@@ -61,7 +61,7 @@ describe('drupal-prototype:files', function () {
   });
 });
 
-describe('drupal-prototype:bower', function () {
+describe('center-subtheme:bower', function () {
   this.timeout(30000);
 
   before(function (done) {
@@ -94,7 +94,7 @@ describe('drupal-prototype:bower', function () {
   });
 });
 
-describe('drupal-prototype:styleguide', function () {
+describe('center-subtheme:styleguide', function () {
   before(function (done) {
     helpers.run(path.join(__dirname, '../app'))
       .inDir(path.join(os.tmpdir(), './temp-test'))
