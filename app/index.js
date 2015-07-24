@@ -10,7 +10,7 @@ var DrupalPrototypeGenerator = yeoman.generators.Base.extend({
     var done = this.async();
 
     // have Yeoman greet the user
-    console.log(this.yeoman);
+    if (this.yeoman) { console.log(this.yeoman); }
 
     var prompts = [
       {
