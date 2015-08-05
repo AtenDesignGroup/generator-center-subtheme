@@ -103,7 +103,6 @@ var DrupalPrototypeGenerator = yeoman.generators.Base.extend({
     this.copy('screenshot.png');
     this.copy('logo.png');
     this.copy('.gitignore');
-    this.directory('polyfills');
     this.directory('src');
     this.directory('templates');
   },
