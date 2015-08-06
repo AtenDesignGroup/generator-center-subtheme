@@ -1,6 +1,9 @@
 // Wraps a styleblock in the appropriate min-width media query.
 // @todo - make this breakpoint compatible.
 //
+// Track if we've initialized the base font size.
+$base-font-size-initialized: ();
+
 // $breakpoint-name - The breakpoint map key.
 @mixin respond-above($breakpoint-name) {
   $breakpoint-value: get-breakpoint($breakpoint-name);
@@ -75,7 +78,7 @@ $base-font-size-cache: ();
 // $breakpoint-name - The current breakpoint key.
 // $font-size - The $font-sizes map key for the base font size.
 @function base-font-size($breakpoint-name: "default", $font-size: body) {
-  $base-font-size-cache: cache-base-font-size($font-size, $breakpoints);
+  $base-font-size-cache: cache-base-font-size($font-size, $breakpoints) !global;
   @return map-get($base-font-size-cache, $breakpoint-name);
 
 
@@ -92,21 +95,29 @@ $base-font-size-cache: ();
   }
 }
 
+// Track if we've initialized the base font size.
+$base-font-size-initialized: ();
+
 // Outputs the font properties of a named font-size at the given breakpoint.
 //
 // $font-size - The $font-sizes map key.
 // $breakpoint-name - The desired breakpoint key.
+// $base-font-size - The default font size name.
 @mixin text-size($font-size, $breakpoint-name: "default", $base-font-size: body) {
   $font-size-properties: text-properties-for($font-size, $breakpoint-name);
 
   @if $font-size-properties != null {
-    @if ($font-size == $base-font-size) {
+    // If we haven't set the base font size yet, set it relative to the default
+    // browser size. This allows us to set other elements to the base font size
+    // as well.
+    @if ($font-size == $base-font-size and map-get($base-font-size-initialized, $breakpoint-name) != true) {
       font-size: ((nth($font-size-properties, 1)) / ($browser-default-font-size)) * 1em;
+      $base-font-size-initialized: map-merge($base-font-size-initialized, ($breakpoint-name: true)) !global;
     } @else {
       $base-font-size: base-font-size($breakpoint-name);
       font-size: ((nth($font-size-properties, 1)) / ($base-font-size)) * 1rem;
     }
-    line-height: ((nth($font-size-properties, 2) / nth($font-size-properties, 1))) * 1em;
+    line-height: ((nth($font-size-properties, 2) / nth($font-size-properties, 1)));
   } @else {
     @warn "Breakpoint '#{$breakpoint-name}' for text size '#{$font-size}' is not defined";
   }
