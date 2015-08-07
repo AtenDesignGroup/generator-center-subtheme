@@ -1,6 +1,6 @@
 <div id="page" class="<?php print $classes; ?>">
 
-  <?php include('page-header.inc'); ?>
+  <?php include('page-header.tpl.php'); ?>
 
   <div id="main">
 
@@ -73,5 +73,5 @@
       <?php endif; // end Below Content ?>
     </div>
 
-  <?php include('page-footer.inc'); ?>
+  <?php include('page-footer.tpl.php'); ?>
 </div>
