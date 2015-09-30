@@ -26,11 +26,11 @@
   "dependencies": {
     "yeoman-generator": "^0.18.9",
     "chalk": "^1.0.0",
-    "yosay": "^1.0.2"
+    "yosay": "^1.0.2",
+    "lodash": "^3.5.0"
   },
   "devDependencies": {
     "gulp": "^3.9.0",
-    "lodash": "^3.5.0",
     "mocha": "*"
   }
 }
