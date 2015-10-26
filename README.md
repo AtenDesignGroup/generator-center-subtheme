@@ -11,7 +11,7 @@ If you don't have Yeoman installed yet, run the following.
 npm install -g yo
 ```
 
-To install generator-drupal-prototype from npm, run:
+To install generator-center-subtheme from npm, run:
 
 ```bash
 npm install -g generator-center-subtheme
